@@ -1,6 +1,6 @@
 # Flutter Shoes Shop Application UI Design and Animation
 
-Flutter Shoes Shop Application UI Design and Animation - day 14 Flutter Animation and UI Design.
+Flutter Shoes Shop Application UI Design and Animation - day 15 Flutter Animation and UI Design.
 
 This repository is a part of the 100-day design in Flutter.
 

@@ -1,4 +1,4 @@
-import 'package:day15_shoes/Animation/FadeAnimation.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:day15_shoes/Shoes.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +18,14 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: null,
         title: Text("Shoes", style: TextStyle(color: Colors.black, fontSize: 25),),
-        brightness: Brightness.light,
+        // brightness: Brightness.light,
         actions: <Widget>[
           IconButton(
+            onPressed: () {},
             icon: Icon(Icons.notifications_none, color: Colors.black,),
           ),
           IconButton(
+            onPressed: () {},
             icon: Icon(Icons.shopping_cart, color: Colors.black,),
           )
         ],
@@ -40,7 +42,7 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     AspectRatio(
                       aspectRatio: 2.2/1,
-                      child: FadeAnimation(1, Container(
+                      child: FadeInUp(duration: Duration(milliseconds: 1000), child: Container(
                         margin: EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
                           color: Colors.grey[200],
@@ -53,7 +55,7 @@ class HomePage extends StatelessWidget {
                     ),
                     AspectRatio(
                       aspectRatio: 2.2/1,
-                      child: FadeAnimation(1.1, Container(
+                      child: FadeInUp(duration: Duration(milliseconds: 1100), child: Container(
                         margin: EdgeInsets.only(right: 10),
                         child: Center(
                           child: Text("Sneakers", style: TextStyle(fontSize: 17),),
@@ -62,7 +64,7 @@ class HomePage extends StatelessWidget {
                     ),
                     AspectRatio(
                       aspectRatio: 2.2/1,
-                      child: FadeAnimation(1.2, Container(
+                      child: FadeInUp(duration: Duration(milliseconds: 1200), child: Container(
                         margin: EdgeInsets.only(right: 10),
                         child: Center(
                           child: Text("Football", style: TextStyle(fontSize: 17),),
@@ -71,7 +73,7 @@ class HomePage extends StatelessWidget {
                     ),
                     AspectRatio(
                       aspectRatio: 2.2/1,
-                      child: FadeAnimation(1.3, Container(
+                      child: FadeInUp(duration: Duration(milliseconds: 1300), child: Container(
                         margin: EdgeInsets.only(right: 10),
                         child: Center(
                           child: Text("Soccer", style: TextStyle(fontSize: 17),),
@@ -80,7 +82,7 @@ class HomePage extends StatelessWidget {
                     ),
                     AspectRatio(
                       aspectRatio: 2.2/1,
-                      child: FadeAnimation(1.4, Container(
+                      child: FadeInUp(duration: Duration(milliseconds: 1400), child: Container(
                         margin: EdgeInsets.only(right: 10),
                         child: Center(
                           child: Text("Golf", style: TextStyle(fontSize: 17),),
@@ -91,9 +93,9 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20,),
-              FadeAnimation(1.5, makeItem(image: 'assets/images/one.jpg', tag: 'red', context: context)),
-              FadeAnimation(1.6, makeItem(image: 'assets/images/two.jpg', tag: 'blue', context: context)),
-              FadeAnimation(1.7, makeItem(image: 'assets/images/three.jpg', tag: 'white', context: context)),
+              FadeInUp(duration: Duration(milliseconds: 1500), child: makeItem(image: 'assets/images/one.jpg', tag: 'red', context: context)),
+              FadeInUp(duration: Duration(milliseconds: 1600), child: makeItem(image: 'assets/images/two.jpg', tag: 'blue', context: context)),
+              FadeInUp(duration: Duration(milliseconds: 1700), child: makeItem(image: 'assets/images/three.jpg', tag: 'white', context: context)),
             ],
           ),
         ),
@@ -106,7 +108,7 @@ class HomePage extends StatelessWidget {
       tag: tag,
       child: GestureDetector(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Shoes(image: image,)));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Shoes(image: image, tag: tag,)));
         },
         child: Container(
           height: 250,
@@ -121,7 +123,7 @@ class HomePage extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey[400],
+                color: Colors.grey.shade400,
                 blurRadius: 10,
                 offset: Offset(0, 10)
               )
@@ -138,14 +140,14 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        FadeAnimation(1, Text("Sneakers", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),)),
+                        FadeInUp(duration: Duration(milliseconds: 1000), child: Text("Sneakers", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),)),
                         SizedBox(height: 10,),
-                        FadeAnimation(1.1, Text("Nike", style: TextStyle(color: Colors.white, fontSize: 20),)),
+                        FadeInUp(duration: Duration(milliseconds: 1100), child: Text("Nike", style: TextStyle(color: Colors.white, fontSize: 20),)),
 
                       ],
                     ),
                   ),
-                  FadeAnimation(1.2, Container(
+                  FadeInUp(duration: Duration(milliseconds: 1200), child: Container(
                     width: 35,
                     height: 35,
                     decoration: BoxDecoration(
@@ -158,7 +160,7 @@ class HomePage extends StatelessWidget {
                   ))
                 ],
               ),
-              FadeAnimation(1.2, Text("100\$", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),)),              
+              FadeInUp(duration: Duration(milliseconds: 1200), child: Text("100\$", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),)),              
             ],
           ),
         ),

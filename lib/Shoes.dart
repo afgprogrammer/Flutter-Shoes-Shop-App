@@ -1,10 +1,11 @@
-import 'package:day15_shoes/Animation/FadeAnimation.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class Shoes extends StatefulWidget {
   final String image;
+  final String tag;
 
-  const Shoes({Key key, this.image}) : super(key: key);
+  const Shoes({Key? key, required this.image, required this.tag}) : super(key: key);
 
   @override
   _ShoesState createState() => _ShoesState();
@@ -16,7 +17,7 @@ class _ShoesState extends State<Shoes> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Hero(
-          tag: 'red',
+          tag: widget.tag,
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: double.infinity,
@@ -27,7 +28,7 @@ class _ShoesState extends State<Shoes> {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey[400],
+                  color: Colors.grey.shade400,
                   blurRadius: 10,
                   offset: Offset(0, 10)
                 )
@@ -68,7 +69,7 @@ class _ShoesState extends State<Shoes> {
                   left: 0,
                   width: MediaQuery.of(context).size.width,
                   height: 500,
-                  child: FadeAnimation(1, Container(
+                  child: FadeInUp(duration: Duration(milliseconds: 1000), child: Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -83,13 +84,13 @@ class _ShoesState extends State<Shoes> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        FadeAnimation(1.3, Text("Sneakers", style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),)),
+                        FadeInUp(duration: Duration(milliseconds: 1300), child: Text("Sneakers", style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),)),
                         SizedBox(height: 25,),
-                        FadeAnimation(1.4, Text("Size", style: TextStyle(color: Colors.white, fontSize: 20),)),
+                        FadeInUp(duration: Duration(milliseconds: 1400), child: Text("Size", style: TextStyle(color: Colors.white, fontSize: 20),)),
                         SizedBox(height: 10,),
                         Row(
                           children: <Widget>[
-                            FadeAnimation(1.5, Container(
+                            FadeInUp(duration: Duration(milliseconds: 1450), child: Container(
                               width: 40,
                               height: 40,
                               margin: EdgeInsets.only(right: 20),
@@ -97,7 +98,7 @@ class _ShoesState extends State<Shoes> {
                                 child: Text('40', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
                               ),
                             )),
-                            FadeAnimation(1.45, Container(
+                            FadeInUp(duration: Duration(milliseconds: 1450), child: Container(
                               width: 40,
                               height: 40,
                               margin: EdgeInsets.only(right: 20),
@@ -109,7 +110,7 @@ class _ShoesState extends State<Shoes> {
                                 child: Text('42', style: TextStyle(fontWeight: FontWeight.bold),)
                               ),
                             )),
-                            FadeAnimation(1.46, Container(
+                            FadeInUp(duration: Duration(milliseconds: 1460), child: Container(
                               width: 40,
                               height: 40,
                               margin: EdgeInsets.only(right: 20),
@@ -117,7 +118,7 @@ class _ShoesState extends State<Shoes> {
                                 child: Text('44', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)
                               ),
                             )),
-                            FadeAnimation(1.47, Container(
+                            FadeInUp(duration: Duration(milliseconds: 1470), child: Container(
                               width: 40,
                               height: 40,
                               margin: EdgeInsets.only(right: 20),
@@ -128,7 +129,7 @@ class _ShoesState extends State<Shoes> {
                           ],
                         ),
                         SizedBox(height: 60,),
-                        FadeAnimation(1.5, Container(
+                        FadeInUp(duration: Duration(milliseconds: 1500), child: Container(
                           height: 50,
                           decoration: BoxDecoration(
                             color: Colors.white,
